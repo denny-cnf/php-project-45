@@ -1,5 +1,7 @@
 {
     "name": "hexlet/code",
+    "bin": ["bin/brain-games"],
+    "type": "library",
     "autoload": {
         "psr-4": {
             "Hexlet\\Code\\": "src/"
@@ -7,8 +9,11 @@
     },
     "authors": [
         {
-            "name": "Denny Cnf"
+            "name": "Denny Cnf",
+            "email": "denny.cnf@gmail.com"
         }
     ],
+    "description": "hexlet php-package",
+    "license": "MIT",
     "require": {}
 }
