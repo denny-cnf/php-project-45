@@ -3,9 +3,7 @@
     "bin": ["bin/brain-games"],
     "type": "library",
     "autoload": {
-        "psr-4": {
-            "Hexlet\\Code\\": "src/"
-        }
+        "files": ["src/Cli.php"]
     },
     "authors": [
         {
@@ -15,5 +13,7 @@
     ],
     "description": "hexlet php-package",
     "license": "MIT",
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.15"
+    }
 }
