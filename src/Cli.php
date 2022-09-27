@@ -1,14 +1,15 @@
 <?php
 
 /**
- * Header Block.
+ * BrainGames core
  */
 
-namespace BrainGames;
-
+namespace cli\BrainGames;
 use function cli\line;
 use function cli\prompt;
 
-line('Welcome to the Brain Game');
-$name = prompt('May I have your name?');
-line("Hello, %s!", $name);
+function Hello() {
+    line('Welcome to the Brain Game');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);    
+}
