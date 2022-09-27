@@ -5,8 +5,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Cli\Hello;
 
-\cli\BrainGames\Hello();
+Hello();
 
 line('Answer "yes" if the number is even, otherwise answer "no".');
 

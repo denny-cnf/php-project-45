@@ -4,7 +4,7 @@
  * BrainGames core
  */
 
-namespace cli\BrainGames;
+namespace BrainGames\Cli;
 use function cli\line;
 use function cli\prompt;
 
