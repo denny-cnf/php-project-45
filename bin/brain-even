@@ -1,47 +1,7 @@
 #!/usr/bin/env php
 <?php
-namespace BrainEven;
+
 require_once __DIR__ . '/../vendor/autoload.php';
+use function Games\Even\Main;
 
-use function cli\line;
-use function cli\prompt;
-use function BrainGames\Cli\Hello;
-
-Hello();
-
-line('Answer "yes" if the number is even, otherwise answer "no".');
-
-for ($i=0; $i<3; $i++) {
-    $question = rand(1, 99);
-    $answer = "";
-    line('Question: '. $question);
-    $answer = prompt('Your answer', $answer);
-
-    // Проверка на четность
-    if ($question % 2 === 0) {
-        $true = "yes";
-    } else {
-        $true = "no";
-    }
-
-    // Проверка ответа юзера
-    if ($true === "yes") {
-        if ($answer === "yes") {
-            line('Correct!');
-        } else {
-            line("'no' is wrong answer ;(. Correct answer was 'yes'.");
-            line("'Let's try again, Bill!'");
-            exit();
-        }
-    } elseif ($true === "no") {
-        if ($answer === "no") {
-            line('Correct!');
-        } else {
-            line("'yes' is wrong answer ;(. Correct answer was 'no'.");
-            line("'Let's try again, Bill!'");
-            exit();
-        }
-    }
-}
-
-line("Congratulations, %s!", $name);
+Main();

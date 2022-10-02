@@ -2,8 +2,6 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-use function BrainGames\Cli\Hello;
 use function Games\Calc\Main;
 
-Hello();
 Main();
