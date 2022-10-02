@@ -2,11 +2,17 @@
     "name": "hexlet/code",
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "type": "library",
     "autoload": {
-        "files": ["src/Cli.php"]
+        "files": [
+            "src/Cli.php",
+            "src/Engine.php",
+            "src/Games/Calc.php",
+            "src/Games/Even.php"
+        ]
     },
     "authors": [
         {
