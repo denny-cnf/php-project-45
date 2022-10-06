@@ -9,6 +9,8 @@ use function cli\line;
 use function cli\prompt;
 
 $name = "";
+$answer = "";
+$result = "";
 
 function Hello() {
     global $name;
@@ -20,9 +22,15 @@ function Hello() {
 
 function Loss() {
     global $name;
-    line("'no' is wrong answer ;(. Correct answer was 'yes'.");
+    global $answer;
+    global $result;
+    line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
     exit();
+}
+
+function Correct() {
+    line("Correct!");
 }
 
 function Win() {
@@ -31,5 +39,5 @@ function Win() {
 }
 
 function Random() {
-    return rand(1,99);
+    return abs(rand(1,99));
 }

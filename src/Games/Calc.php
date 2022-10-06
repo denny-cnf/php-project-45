@@ -2,6 +2,7 @@
 namespace Games\Calc;
 use function Games\Engine\Hello;
 use function Games\Engine\Random;
+use function Games\Engine\Correct;
 use function Games\Engine\Win;
 use function Games\Engine\Loss;
 use function cli\line;
@@ -10,6 +11,8 @@ use function cli\prompt;
 function Main() {
     Hello();
     global $name;
+    global $answer;
+    global $result;
 
     line("What is the result of the expression?");
 

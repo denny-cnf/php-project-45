@@ -4,6 +4,7 @@ use function cli\line;
 use function cli\prompt;
 use function Games\Engine\Hello;
 use function Games\Engine\Random;
+use function Games\Engine\Correct;
 use function Games\Engine\Win;
 use function Games\Engine\Loss;
 
@@ -12,6 +13,8 @@ function Main() {
 Hello();
 
 global $name;
+global $answer;
+global $result;
 
 line('Answer "yes" if the number is even, otherwise answer "no".');
 
@@ -23,21 +26,21 @@ line('Answer "yes" if the number is even, otherwise answer "no".');
 
         // Проверка на четность
         if ($question % 2 === 0) {
-            $true = "yes";
+            $result = "yes";
         } else {
-            $true = "no";
+            $result = "no";
         }
 
         // Проверка ответа юзера
-        if ($true === "yes") {
+        if ($result === "yes") {
             if ($answer === "yes") {
-                line('Correct!');
+                Correct();
             } else {
                 Loss();
             }
-        } elseif ($true === "no") {
+        } elseif ($result === "no") {
             if ($answer === "no") {
-                line('Correct!');
+                Correct();
             } else {
                 Loss();
             }
