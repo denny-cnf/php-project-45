@@ -5,14 +5,12 @@
  */
 
 namespace Games\Engine;
+
 use function cli\line;
 use function cli\prompt;
 
-$name = "";
-$answer = "";
-$result = "";
-
-function Hello() {
+function Hello()
+{
     global $name;
     line('Welcome to the Brain Game');
     $name = prompt('May I have your name?');
@@ -20,7 +18,8 @@ function Hello() {
     return $name;
 }
 
-function Loss() {
+function Loss()
+{
     global $name;
     global $answer;
     global $result;
@@ -29,15 +28,18 @@ function Loss() {
     exit();
 }
 
-function Correct() {
+function Correct()
+{
     line("Correct!");
 }
 
-function Win() {
+function Win()
+{
     global $name;
     line("Congratulations, %s!", $name);
 }
 
-function Random() {
-    return abs(rand(1,99));
+function Random()
+{
+    return abs(rand(1, 99));
 }

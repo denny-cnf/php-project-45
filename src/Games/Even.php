@@ -1,5 +1,11 @@
 <?php
+
+/**
+ * This file contains logic Brain-games Even
+ */
+
 namespace Games\Even;
+
 use function cli\line;
 use function cli\prompt;
 use function Games\Engine\Hello;
@@ -8,30 +14,23 @@ use function Games\Engine\Correct;
 use function Games\Engine\Win;
 use function Games\Engine\Loss;
 
-function Main() {
-
-Hello();
-
-global $name;
-global $answer;
-global $result;
-
-line('Answer "yes" if the number is even, otherwise answer "no".');
-
-    for ($i=0; $i<3; $i++) {
+function Main()
+{
+    Hello();
+    global $name;
+    global $answer;
+    global $result;
+    line('Answer "yes" if the number is even, otherwise answer "no".');
+    for ($i = 0; $i < 3; $i++) {
         $question = random();
         $answer = "";
-        line('Question: '. $question);
+        line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
-
-        // Проверка на четность
         if ($question % 2 === 0) {
             $result = "yes";
         } else {
             $result = "no";
         }
-
-        // Проверка ответа юзера
         if ($result === "yes") {
             if ($answer === "yes") {
                 Correct();
