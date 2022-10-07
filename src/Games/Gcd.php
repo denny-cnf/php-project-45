@@ -2,6 +2,7 @@
 namespace Games\Gcd;
 use function Games\Engine\Hello;
 use function Games\Engine\Random;
+use function Games\Engine\Correct;
 use function Games\Engine\Win;
 use function Games\Engine\Loss;
 use function cli\line;
@@ -24,7 +25,7 @@ function Main() {
         $result = gmp_gcd($num1, $num2);
 
         if ($result == $answer) {
-            line("Correct!");
+            Correct();
         } else {
             Loss();
         }

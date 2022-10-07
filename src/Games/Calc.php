@@ -40,7 +40,7 @@ function Main() {
         }
 
         if ($result == $answer) {
-            line("Correct!");
+            Correct();
         } else {
             Loss();
         }

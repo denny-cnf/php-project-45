@@ -14,3 +14,6 @@ https://asciinema.org/a/FjwTrxaBXBzJzOoKADTh96KhV
 
 ### ASCIINEMA Progression
 https://asciinema.org/a/HlnNk3P1RuhQBACyvxNmOHp4J
+
+### ASCIINEMA Prime
+https://asciinema.org/a/ZdcaOYQUt3DkFKhXKaX4FaqtM
