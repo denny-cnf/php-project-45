@@ -11,3 +11,6 @@ https://asciinema.org/a/4ykpK3DngDsXDsZREPUTD6yXn
 
 ### ASCIINEMA GCD
 https://asciinema.org/a/FjwTrxaBXBzJzOoKADTh96KhV
+
+### ASCIINEMA Progression
+https://asciinema.org/a/HlnNk3P1RuhQBACyvxNmOHp4J

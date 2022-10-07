@@ -30,7 +30,6 @@ function Main() {
         }
         
         $hideNum = $array[$rand];
-        print "hidenum:".$hideNum."\n";
         $replacement = array($rand => "..");
         $array = array_replace($array, $replacement);
 
