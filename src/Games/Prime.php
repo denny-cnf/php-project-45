@@ -14,7 +14,7 @@ use function Games\Engine\Correct;
 use function Games\Engine\Win;
 use function Games\Engine\Loss;
 
-function Main()
+function Prime()
 {
     Hello();
     global $name;

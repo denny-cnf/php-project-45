@@ -2,6 +2,6 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-use function Games\Gcd\Main;
+use function Games\Gcd\Gcd;
 
-Main();
+Gcd();

@@ -14,7 +14,7 @@ use function Games\Engine\Loss;
 use function cli\line;
 use function cli\prompt;
 
-function Main()
+function Calc()
 {
     Hello();
     global $name;

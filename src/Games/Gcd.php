@@ -14,10 +14,12 @@ use function Games\Engine\Loss;
 use function cli\line;
 use function cli\prompt;
 
-function Main()
+function Gcd()
 {
     Hello();
     global $name;
+    global $answer;
+    global $result;
     line("Find the greatest common divisor of given numbers.");
     for ($i = 0; $i < 3; $i++) {
         $num1 = random();
