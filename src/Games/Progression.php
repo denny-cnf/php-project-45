@@ -29,7 +29,7 @@ function Progression()
         $num1 = rand(1, 99);
         $num2 = rand(1, 99);
         $progression = ($num2 - $num1);
-        for ($l = 0; $l < $length; $l++) {
+        for ($l = 0; $l <= $length; $l++) {
             $sum = $num1 + $progression;
             $allNums += $sum;
             array_push($array, $allNums);
