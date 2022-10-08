@@ -33,14 +33,14 @@ function Prime()
                 $result = "no";
             }
         }
-        if ($result === "yes") {
-            if ($answer === "yes") {
+        if ($result == "yes") {
+            if ($answer == "yes") {
                 Correct();
             } else {
                 Loss();
             }
-        } elseif ($result === "no") {
-            if ($answer === "no") {
+        } elseif ($result == "no") {
+            if ($answer == "no") {
                 Correct();
             } else {
                 Loss();
