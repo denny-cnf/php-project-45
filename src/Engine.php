@@ -157,22 +157,27 @@ function Gcd($name)
     return line("Congratulations, %s!", $name);
 }
 
-function Prime($name)
-{
-    for ($i = 0; $i < 3; $i++) {
+function Prime($name) {
+    for ($i=0; $i<3; $i++) {
         $question = AbsRandom();
         $answer = "";
-        line('Question: ' . $question);
+        line('Question: '. $question);
         $answer = prompt('Your answer', $answer);
-        if ($question % 2 === 0) {
-            $result = "yes";
-        } else {
-            $result = "no";
+
+        // Проверка на четность
+        for ($k = 2; $k < $question; $k++) {
+            if ($question % $k === 0) {
+                $result = "yes";
+            } else {
+                $result = "no";
+            }
         }
+    
+        // Проверка ответа юзера
         if ($result === "yes") {
             if ($answer === "yes") {
                 Correct();
-            } elseif ($answer === "no") {
+            } else {
                 line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
                 line("'Let's try again, %s!'", $name);
                 exit();
@@ -180,15 +185,15 @@ function Prime($name)
         } elseif ($result === "no") {
             if ($answer === "no") {
                 Correct();
-            } elseif ($answer === "yes") {
+            } else {
                 line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
                 line("'Let's try again, %s!'", $name);
                 exit();
             }
         }
+
     }
-    line("Congratulations, %s!", $name);
-    return $result;
+    return line("Congratulations, %s!", $name);
 }
 
 function Progression($name)
