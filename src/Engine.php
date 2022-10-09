@@ -44,7 +44,7 @@ function AbsRandom()
     return abs(rand(1, 99));
 }
 
-function Gmp(int $d1, int $d2)
+function Gmp($d1, $d2)
 {
     $array1 = [];
     $array2 = [];
@@ -63,7 +63,7 @@ function Gmp(int $d1, int $d2)
     return $result;
 }
 
-function Even(string $name)
+function Even($name)
 {
     line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($i = 0; $i < 3; $i++) {
@@ -84,7 +84,7 @@ function Even(string $name)
                 line("'Let's try again, %s!'", $name);
                 exit();
             }
-        } elseif ($result == "no") {
+        } elseif ($result === "no") {
             if ($answer === "no") {
                 Correct();
             } else {
@@ -97,7 +97,7 @@ function Even(string $name)
     return line("Congratulations, %s!", $name);
 }
 
-function Calc(string $name)
+function Calc($name)
 {
     line("What is the result of the expression?");
     for ($i = 0; $i < 3; $i++) {
@@ -136,7 +136,7 @@ function Calc(string $name)
     return line("Congratulations, %s!", $name);
 }
 
-function Gcd(string $name)
+function Gcd($name)
 {
     line("Find the greatest common divisor of given numbers.");
     for ($i = 0; $i < 3; $i++) {
@@ -157,7 +157,7 @@ function Gcd(string $name)
     return line("Congratulations, %s!", $name);
 }
 
-function Prime(string $name)
+function Prime($name)
 {
     for ($i = 0; $i < 3; $i++) {
         $question = AbsRandom();
@@ -192,7 +192,7 @@ function Prime(string $name)
     line("Congratulations, %s!", $name);
 }
 
-function Progression(string $name)
+function Progression($name)
 {
     for ($i = 0; $i < 3; $i++) {
         $array = [];
