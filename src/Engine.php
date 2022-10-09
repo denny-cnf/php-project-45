@@ -157,11 +157,13 @@ function Gcd($name)
     return line("Congratulations, %s!", $name);
 }
 
-function Prime($name) {
-    for ($i=0; $i<3; $i++) {
+function Prime($name)
+{
+    for ($i = 0; $i < 3; $i++) {
         $question = AbsRandom();
         $answer = "";
-        line('Question: '. $question);
+        $result = "";
+        line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
 
         // Проверка на четность
@@ -172,7 +174,6 @@ function Prime($name) {
                 $result = "no";
             }
         }
-    
         // Проверка ответа юзера
         if ($result === "yes") {
             if ($answer === "yes") {
@@ -191,7 +192,6 @@ function Prime($name) {
                 exit();
             }
         }
-
     }
     return line("Congratulations, %s!", $name);
 }
