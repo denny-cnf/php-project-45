@@ -164,8 +164,6 @@ function Prime($name)
         $answer = "";
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
-
-        // Проверка на четность
         for ($k = 2; $k < $question; $k++) {
             if ($question % $k === 0) {
                 $result = "yes";
@@ -173,7 +171,6 @@ function Prime($name)
                 $result = "no";
             }
         }
-        // Проверка ответа юзера
         if ($result === "yes") {
             if ($answer === "yes") {
                 Correct();
