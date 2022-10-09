@@ -164,7 +164,7 @@ function Prime($name)
         $answer = "";
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
-        if ($question % $question === 0) {
+        if ($question % 2 === 0) {
             $result = "yes";
         } else {
             $result = "no";
