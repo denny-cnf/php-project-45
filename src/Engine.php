@@ -172,7 +172,7 @@ function Prime($name)
         if ($result === "yes") {
             if ($answer === "yes") {
                 Correct();
-            } else {
+            } elseif ($answer === "no") {
                 line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
                 line("'Let's try again, %s!'", $name);
                 exit();
@@ -180,7 +180,7 @@ function Prime($name)
         } elseif ($result === "no") {
             if ($answer === "no") {
                 Correct();
-            } else {
+            } elseif ($answer === "yes") {
                 line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
                 line("'Let's try again, %s!'", $name);
                 exit();
