@@ -162,15 +162,12 @@ function Prime($name)
     for ($i = 0; $i < 3; $i++) {
         $question = AbsRandom();
         $answer = "";
-        $result = "";
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
-        for ($k = 2; $k < $question; $k++) {
-            if ($question % $k === 0) {
-                $result = "yes";
-            } else {
-                $result = "no";
-            }
+        if ($question % $question === 0) {
+            $result = "yes";
+        } else {
+            $result = "no";
         }
         if ($result === "yes") {
             if ($answer === "yes") {
