@@ -2,6 +2,6 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-use function Games\Progression\Progression;
+use function Games\Progression\StartGame;
 
-Progression();
+StartGame();

@@ -2,6 +2,6 @@
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
-use function Games\Even\Even;
+use function Games\Even\StartGame;
 
-Even();
+StartGame();

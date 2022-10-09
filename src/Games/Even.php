@@ -6,44 +6,14 @@
 
 namespace Games\Even;
 
+use function Games\Engine\Even;
 use function cli\line;
 use function cli\prompt;
-use function Games\Engine\Hello;
-use function Games\Engine\Random;
-use function Games\Engine\Correct;
-use function Games\Engine\Win;
-use function Games\Engine\Loss;
 
-function Even()
+function StartGame()
 {
-    Hello();
-    global $name;
-    global $answer;
-    global $result;
-    line('Answer "yes" if the number is even, otherwise answer "no".');
-    for ($i = 0; $i < 3; $i++) {
-        $question = random();
-        $answer = "";
-        line('Question: ' . $question);
-        $answer = prompt('Your answer', $answer);
-        if ($question % 2 === 0) {
-            $result = "yes";
-        } else {
-            $result = "no";
-        }
-        if ($result === "yes") {
-            if ($answer === "yes") {
-                Correct();
-            } else {
-                Loss();
-            }
-        } elseif ($result === "no") {
-            if ($answer === "no") {
-                Correct();
-            } else {
-                Loss();
-            }
-        }
-    }
-    Win();
+    line('Welcome to the Brain Games!');
+    $name = prompt('May I have your name?');
+    line("Hello, %s!", $name);
+    return Even($name);
 }
