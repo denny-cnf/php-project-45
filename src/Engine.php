@@ -161,7 +161,7 @@ function Prime(string $name)
 {
     for ($i = 0; $i < 3; $i++) {
         $question = AbsRandom();
-        $answer = "";
+        //$answer = "";
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
         for ($k = 2; $k < $question; $k++) {
