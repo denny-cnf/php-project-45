@@ -176,16 +176,14 @@ function Prime(string $name)
                 Correct();
             } else {
                 line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-                line("'Let's try again, %s!'", $name);
-                exit();
+                return line("'Let's try again, %s!'", $name);
             }
         } elseif ($result === "no") {
             if ($answer === "no") {
                 Correct();
             } else {
                 line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-                line("'Let's try again, %s!'", $name);
-                exit();
+                return line("'Let's try again, %s!'", $name);
             }
         }
     }
