@@ -162,33 +162,35 @@ function Prime(string $name)
     for ($i = 0; $i < 3; $i++) {
         $question = AbsRandom();
         $answer = "";
-        $result = "";
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
         for ($k = 2; $k < $question; $k++) {
+            $result = "";
             if ($question % $k === 0) {
                 $result = "yes";
+                if ($answer === "yes") {
+                    Correct();
+                    break;
+                } else {
+                    line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+                    line("'Let's try again, %s!'", $name);
+                    exit;
+                }
             } else {
                 $result = "no";
-            }
-        }
-        if ($result === "yes") {
-            if ($answer === "yes") {
-                Correct();
-            } else {
-                line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-                return line("'Let's try again, %s!'", $name);
-            }
-        } elseif ($result === "no") {
-            if ($answer === "no") {
-                Correct();
-            } else {
-                line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-                return line("'Let's try again, %s!'", $name);
+                if ($answer === "no") {
+                    Correct();
+                    break;
+                } else {
+                    line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+                    line("'Let's try again, %s!'", $name);
+                    exit;
+                }
             }
         }
     }
-    return line("Congratulations, %s!", $name);
+    line("Congratulations, %s!", $name);
+    return $result;
 }
 
 function Progression(string $name)
