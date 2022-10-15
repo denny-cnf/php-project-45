@@ -162,14 +162,14 @@ function Prime(string $name)
     for ($i = 0; $i < 3; $i++) {
         $question = AbsRandom();
         $answer = "";
+        $result = "yes";
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
         for ($k = 2; $k < $question; $k++) {
             if ($question % $k === 0) {
                 $result = "no";
-            } else {
-                $result = "yes";
             }
+
             if ($result === $answer) {
                 Correct();
                 break;
@@ -180,8 +180,7 @@ function Prime(string $name)
             }    
         }
     }
-    line("Congratulations, %s!", $name);
-    return $result;
+    return line("Congratulations, %s!", $name);
 }
 
 function Progression(string $name)
