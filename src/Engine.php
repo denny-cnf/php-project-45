@@ -189,8 +189,7 @@ function Prime(string $name)
             }
         }
     }
-    line("Congratulations, %s!", $name);
-    return $result;
+    return line("Congratulations, %s!", $name);
 }
 
 function Progression(string $name)
