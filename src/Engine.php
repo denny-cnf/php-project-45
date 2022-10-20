@@ -76,22 +76,12 @@ function Even(string $name)
         } else {
             $result = "no";
         }
-        if ($result === "yes") {
-            if ($answer === "yes") {
-                Correct();
-            } else {
-                line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-                line("'Let's try again, %s!'", $name);
-                exit();
-            }
-        } elseif ($result == "no") {
-            if ($answer === "no") {
-                Correct();
-            } else {
-                line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-                line("'Let's try again, %s!'", $name);
-                exit();
-            }
+        if ($result === $answer) {
+            Correct();
+        } else {
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("'Let's try again, %s!'", $name);
+            exit();
         }
     }
     return line("Congratulations, %s!", $name);
