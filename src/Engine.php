@@ -165,11 +165,9 @@ function Prime(string $name)
         $result = "yes";
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
-        if ($question > 1) {
-            for ($k = 2; $k < $question; $k++) {
-                if ($question % $k === 0) {
-                    $result = "no";
-                }
+        for ($k = 2; $k < $question; $k++) {
+            if ($question % $k === 0) {
+                $result = "no";
             }
         }
 
