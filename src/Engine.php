@@ -165,22 +165,24 @@ function Prime(string $name)
         $result = "yes";
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
-        for ($k = 2; $k < $question; $k++) {
-            if ($question % $k === 0) {
-                $result = "no";
+        if ($question > 1) {
+            for ($k = 2; $k < $question; $k++) {
+                if ($question % $k === 0) {
+                    $result = "no";
+                }
             }
+        }
 
-            if ($result === $answer) {
-                Correct();
-                break;
-            } else {
-                line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-                line("'Let's try again, %s!'", $name);
-                exit();
-            }    
+        if ($result === $answer) {
+            Correct();
+        } else {
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("'Let's try again, %s!'", $name);
+            exit();
         }
     }
     return line("Congratulations, %s!", $name);
+    return $result;
 }
 
 function Progression(string $name)
