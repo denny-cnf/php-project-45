@@ -169,7 +169,7 @@ function Prime(string $name)
             exit();
         }
     }
-    return line("Congratulations, %s!", $name);
+    line("Congratulations, %s!", $name);
     return $result;
 }
 
