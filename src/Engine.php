@@ -5,7 +5,7 @@
  */
 
 namespace Games\Engine;
-const ROUNDS = 1;
+const ROUNDS = 3;
 use function cli\line;
 use function cli\prompt;
 
