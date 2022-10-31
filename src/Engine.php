@@ -22,7 +22,7 @@ function Loss(string $name, string $answer, string $result)
 {
     line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
-    exit();
+    return true;
 }
 
 function Correct()
