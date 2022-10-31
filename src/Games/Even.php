@@ -9,7 +9,7 @@ namespace Games\Even;
 use function Games\Engine\Even;
 use function cli\line;
 
-function StartGame($name)
+function StartGame(string $name)
 {
     line('Answer "yes" if the number is even, otherwise answer "no".');
     return Even($name);

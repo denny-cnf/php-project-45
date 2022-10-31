@@ -18,7 +18,7 @@ function Hello()
     return $name;
 }
 
-function Loss($name, $answer, $result)
+function Loss(string $name, string $answer, string $result)
 {
     line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
@@ -30,7 +30,7 @@ function Correct()
     line("Correct!");
 }
 
-function Win($name)
+function Win(string $name)
 {
     line("Congratulations, %s!", $name);
 }
