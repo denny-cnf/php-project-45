@@ -5,24 +5,20 @@
  */
 
 namespace Games\Engine;
-
+const ROUNDS = 1;
 use function cli\line;
 use function cli\prompt;
 
 function Hello()
 {
-    global $name;
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     return $name;
 }
 
-function Loss()
+function Loss($name, $answer, $result)
 {
-    global $name;
-    global $answer;
-    global $result;
     line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
     exit();
@@ -33,9 +29,8 @@ function Correct()
     line("Correct!");
 }
 
-function Win()
+function Win($name)
 {
-    global $name;
     line("Congratulations, %s!", $name);
 }
 
@@ -65,8 +60,7 @@ function Gmp(int $d1, int $d2)
 
 function Even(string $name)
 {
-    line('Answer "yes" if the number is even, otherwise answer "no".');
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $question = AbsRandom();
         $answer = "";
         line('Question: ' . $question);
@@ -79,12 +73,11 @@ function Even(string $name)
         if ($result === $answer) {
             Correct();
         } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-            line("'Let's try again, %s!'", $name);
-            exit();
+            Loss($name, $answer, $result);
         }
     }
-    return line("Congratulations, %s!", $name);
+    Win($name);
+    return true;
 }
 
 function Calc(string $name)
@@ -118,12 +111,11 @@ function Calc(string $name)
         if ($result == $answer) {
             Correct();
         } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-            line("'Let's try again, %s!'", $name);
-            exit();
+            Loss($name, $answer, $result);
         }
     }
-    return line("Congratulations, %s!", $name);
+    Win($name);
+    return true;
 }
 
 function Gcd(string $name)
@@ -144,7 +136,8 @@ function Gcd(string $name)
             exit();
         }
     }
-    return line("Congratulations, %s!", $name);
+    Win($name);
+    return true;
 }
 
 function Prime(string $name)
@@ -169,7 +162,8 @@ function Prime(string $name)
             exit();
         }
     }
-    return line("Congratulations, %s!", $name);
+    Win($name);
+    return true;
 }
 
 function Progression(string $name)
@@ -202,5 +196,6 @@ function Progression(string $name)
             exit();
         }
     }
-    return line("Congratulations, %s!", $name);
+    Win($name);
+    return true;
 }

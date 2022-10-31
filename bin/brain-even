@@ -3,5 +3,7 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 use function Games\Even\StartGame;
+use function Games\Engine\Hello;
 
-StartGame();
+$name = Hello();
+StartGame($name);
