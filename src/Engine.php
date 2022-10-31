@@ -22,7 +22,7 @@ function Loss(string $name, string $answer, string $result)
 {
     line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
-    return exit();
+    exit();
 }
 
 function Correct()
@@ -84,7 +84,7 @@ function Even(string $name)
 function Calc(string $name)
 {
     line("What is the result of the expression?");
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $num1 = AbsRandom();
         $num2 = AbsRandom();
         if ($num1 < $num2) {
@@ -122,7 +122,7 @@ function Calc(string $name)
 function Gcd(string $name)
 {
     line("Find the greatest common divisor of given numbers.");
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $num1 = AbsRandom();
         $num2 = AbsRandom();
         line("Question: $num1 $num2");
@@ -143,7 +143,7 @@ function Gcd(string $name)
 
 function Prime(string $name)
 {
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $question = AbsRandom();
         $answer = "";
         $result = "yes";
