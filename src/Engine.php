@@ -18,7 +18,7 @@ function Hello()
     return $name;
 }
 
-function Loss(string $name, string $answer, string $result)
+function Loss(string $name, string $answer, int $result)
 {
     line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
@@ -74,7 +74,9 @@ function Even(string $name)
         if ($result === $answer) {
             Correct();
         } else {
-            Loss($name, $answer, $result);
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("'Let's try again, %s!'", $name);
+            exit();
         }
     }
     Win($name);
@@ -109,7 +111,7 @@ function Calc(string $name)
                 $result = $num1 * $num2;
                 break;
         }
-        if ((string)$result == $answer) {
+        if ($result == $answer) {
             Correct();
         } else {
             Loss($name, $answer, $result);
@@ -157,7 +159,9 @@ function Prime(string $name)
         if ($result === $answer) {
             Correct();
         } else {
-            Loss($name, $answer, $result);
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("'Let's try again, %s!'", $name);
+            exit();
         }
     }
     Win($name);
@@ -186,10 +190,12 @@ function Progression(string $name)
         line("Question: $question");
         $answer = "";
         $answer = prompt('Your answer', $answer);
-        if ((string)$result == $answer) {
+        if ($result == $answer) {
             Correct();
         } else {
-            Loss($name, $answer, $result);
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("'Let's try again, %s!'", $name);
+            exit();
         }
     }
     Win($name);
