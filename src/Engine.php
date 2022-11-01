@@ -112,11 +112,12 @@ function Calc(string $name)
         if ($result == $answer) {
             Correct();
         } else {
-            Loss($name, $answer, $result);
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("'Let's try again, %s!'", $name);
+            exit();
         }
     }
     Win($name);
-    return true;
 }
 
 function Gcd(string $name)
