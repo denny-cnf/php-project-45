@@ -12,5 +12,5 @@ use function cli\line;
 function StartGame(string $name)
 {
     line('Answer "yes" if the number is even, otherwise answer "no".');
-    return Even($name);
+    Even($name);
 }

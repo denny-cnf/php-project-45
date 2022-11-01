@@ -22,7 +22,7 @@ function Loss(string $name, string $answer, string $result)
 {
     line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
-    exit();
+    return exit();
 }
 
 function Correct()
@@ -78,12 +78,13 @@ function Even(string $name)
         }
     }
     Win($name);
+    return true;
 }
 
 function Calc(string $name)
 {
     line("What is the result of the expression?");
-    for ($i = 0; $i < ROUNDS; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $num1 = AbsRandom();
         $num2 = AbsRandom();
         if ($num1 < $num2) {
@@ -115,12 +116,13 @@ function Calc(string $name)
         }
     }
     Win($name);
+    return true;
 }
 
 function Gcd(string $name)
 {
     line("Find the greatest common divisor of given numbers.");
-    for ($i = 0; $i < ROUNDS; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $num1 = AbsRandom();
         $num2 = AbsRandom();
         line("Question: $num1 $num2");
@@ -130,15 +132,18 @@ function Gcd(string $name)
         if ($result == $answer) {
             Correct();
         } else {
-            Loss($name, $answer, $result);
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("'Let's try again, %s!'", $name);
+            exit();
         }
     }
     Win($name);
+    return true;
 }
 
 function Prime(string $name)
 {
-    for ($i = 0; $i < ROUNDS; $i++) {
+    for ($i = 0; $i < 3; $i++) {
         $question = AbsRandom();
         $answer = "";
         $result = "yes";
@@ -153,10 +158,13 @@ function Prime(string $name)
         if ($result === $answer) {
             Correct();
         } else {
-            Loss($name, $answer, $result);
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("'Let's try again, %s!'", $name);
+            exit();
         }
     }
     Win($name);
+    return true;
 }
 
 function Progression(string $name)
@@ -184,8 +192,11 @@ function Progression(string $name)
         if ($result == $answer) {
             Correct();
         } else {
-            Loss($name, $answer, $result);
+            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+            line("'Let's try again, %s!'", $name);
+            exit();
         }
     }
     Win($name);
+    return true;
 }
