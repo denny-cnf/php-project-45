@@ -109,7 +109,7 @@ function Calc(string $name)
                 $result = $num1 * $num2;
                 break;
         }
-        if ($result == $answer) {
+        if ((string)$result == $answer) {
             Correct();
         } else {
             Loss($name, $answer, $result);
@@ -186,7 +186,7 @@ function Progression(string $name)
         line("Question: $question");
         $answer = "";
         $answer = prompt('Your answer', $answer);
-        if ($result == $answer) {
+        if ((string)$result == $answer) {
             Correct();
         } else {
             Loss($name, $answer, $result);
