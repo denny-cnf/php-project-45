@@ -112,9 +112,7 @@ function Calc(string $name)
         if ($result == $answer) {
             Correct();
         } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-            line("'Let's try again, %s!'", $name);
-            exit();
+            Loss($name, $answer, $result);
         }
     }
     Win($name);
@@ -159,9 +157,7 @@ function Prime(string $name)
         if ($result === $answer) {
             Correct();
         } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-            line("'Let's try again, %s!'", $name);
-            exit();
+            Loss($name, $answer, $result);
         }
     }
     Win($name);
@@ -193,9 +189,7 @@ function Progression(string $name)
         if ($result == $answer) {
             Correct();
         } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-            line("'Let's try again, %s!'", $name);
-            exit();
+            Loss($name, $answer, $result);
         }
     }
     Win($name);
