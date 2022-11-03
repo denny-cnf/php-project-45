@@ -46,12 +46,12 @@ function gmp(int $d1, int $d2)
     $array2 = [];
     for ($i1 = $d1; $i1 >= 1; $i1--) {
         if (($d1 % $i1) == 0) {
-            array_push($array1, $i1);
+            $array1[] = $i1;
         }
     }
     for ($i2 = $d2; $i2 >= 1; $i2--) {
         if (($d2 % $i2) == 0) {
-            array_push($array2, $i2);
+            $array2[] = $i2;
         }
     }
     $od = array_intersect($array1, $array2);
@@ -92,7 +92,7 @@ function calc(string $name)
             $num2 = $tempNum1;
         }
         $symbol = array('+', '-', '*');
-        $randomSymbol = $symbol[array_rand($symbol, 1)];
+        $randomSymbol = $symbol[array_rand($symbol)];
         line("Question: $num1 $randomSymbol $num2");
         $answer = "";
         $answer = prompt('Your answer', $answer);
@@ -128,7 +128,7 @@ function gcd(string $name)
         if ($result == $answer) {
             correct();
         } else {
-            loss($name, $answer, $result);loss($name, $answer, $result);
+            loss($name, $answer, $result);
         }
     }
     win($name);
@@ -170,7 +170,7 @@ function progression(string $name)
         for ($l = 0; $l <= $length; $l++) {
             $sum = $num1 + $progression;
             $allNums += $sum;
-            array_push($array, $allNums);
+            $array[] = $allNums;
         }
         $result = $array[$rand];
         $replacement = array($rand => "..");
