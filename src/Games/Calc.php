@@ -15,5 +15,6 @@ function StartGame()
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    return Calc($name);
+    line("What is the result of the expression?");
+    Calc($name);
 }

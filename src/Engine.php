@@ -82,7 +82,6 @@ function Even(string $name)
 
 function Calc(string $name)
 {
-    line("What is the result of the expression?");
     for ($i = 0; $i < 3; $i++) {
         $num1 = AbsRandom();
         $num2 = AbsRandom();
@@ -119,7 +118,6 @@ function Calc(string $name)
 
 function Gcd(string $name)
 {
-    line("Find the greatest common divisor of given numbers.");
     for ($i = 0; $i < 3; $i++) {
         $num1 = AbsRandom();
         $num2 = AbsRandom();
