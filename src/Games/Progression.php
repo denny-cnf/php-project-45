@@ -6,7 +6,7 @@
 
 namespace Games\Progression;
 
-use function Games\Engine\Progression;
+use function Games\Engine\progression;
 use function cli\line;
 use function cli\prompt;
 

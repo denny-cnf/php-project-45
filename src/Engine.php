@@ -42,6 +42,7 @@ function absRandom()
 
 function gmp(int $d1, int $d2)
 {
+    $result = "";
     $array1 = [];
     $array2 = [];
     for ($i1 = $d1; $i1 >= 1; $i1--) {

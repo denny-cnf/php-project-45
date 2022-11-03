@@ -6,7 +6,7 @@
 
 namespace Games\Calc;
 
-use function Games\Engine\Calc;
+use function Games\Engine\calc;
 use function cli\line;
 use function cli\prompt;
 

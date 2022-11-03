@@ -6,7 +6,7 @@
 
 namespace Games\Gcd;
 
-use function Games\Engine\Gcd;
+use function Games\Engine\gcd;
 use function cli\line;
 use function cli\prompt;
 

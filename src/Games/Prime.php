@@ -6,7 +6,7 @@
 
 namespace Games\Prime;
 
-use function Games\Engine\Prime;
+use function Games\Engine\prime;
 use function cli\line;
 use function cli\prompt;
 

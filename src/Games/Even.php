@@ -6,7 +6,7 @@
 
 namespace Games\Even;
 
-use function Games\Engine\Even;
+use function Games\Engine\even;
 use function cli\line;
 use function cli\prompt;
 
