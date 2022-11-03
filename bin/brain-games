@@ -4,4 +4,4 @@
 require_once __DIR__ . '/../vendor/autoload.php';
 use function Games\Engine\Hello;
 
-Hello();
+hello();

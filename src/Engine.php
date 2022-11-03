@@ -10,7 +10,7 @@ const ROUNDS = 3;
 use function cli\line;
 use function cli\prompt;
 
-function Hello()
+function hello()
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
@@ -18,29 +18,29 @@ function Hello()
     return $name;
 }
 
-function Loss(string $name, string $answer, mixed $result)
+function loss(string $name, string $answer, mixed $result)
 {
     line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
     return exit();
 }
 
-function Correct()
+function correct()
 {
     line("Correct!");
 }
 
-function Win(string $name)
+function win(string $name)
 {
     line("Congratulations, %s!", $name);
 }
 
-function AbsRandom()
+function absRandom()
 {
     return abs(rand(1, 99));
 }
 
-function Gmp(int $d1, int $d2)
+function gmp(int $d1, int $d2)
 {
     $array1 = [];
     $array2 = [];
@@ -59,10 +59,10 @@ function Gmp(int $d1, int $d2)
     return $result;
 }
 
-function Even(string $name)
+function even(string $name)
 {
     for ($i = 0; $i < ROUNDS; $i++) {
-        $question = AbsRandom();
+        $question = absRandom();
         $answer = "";
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer);
@@ -72,19 +72,19 @@ function Even(string $name)
             $result = "no";
         }
         if ($result === $answer) {
-            Correct();
+            correct();
         } else {
-            Loss($name, $answer, $result);
+            loss($name, $answer, $result);
         }
     }
-    Win($name);
+    win($name);
 }
 
-function Calc(string $name)
+function calc(string $name)
 {
     for ($i = 0; $i < 3; $i++) {
-        $num1 = AbsRandom();
-        $num2 = AbsRandom();
+        $num1 = absRandom();
+        $num2 = absRandom();
         if ($num1 < $num2) {
             $tempNum1 = $num1;
             $tempNum2 = $num2;
@@ -108,39 +108,39 @@ function Calc(string $name)
                 break;
         }
         if ($result == $answer) {
-            Correct();
+            correct();
         } else {
-            Loss($name, $answer, $result);
+            loss($name, $answer, $result);
         }
     }
-    Win($name);
+    win($name);
 }
 
-function Gcd(string $name)
+function gcd(string $name)
 {
     for ($i = 0; $i < 3; $i++) {
-        $num1 = AbsRandom();
-        $num2 = AbsRandom();
+        $num1 = absRandom();
+        $num2 = absRandom();
         line("Question: $num1 $num2");
         $answer = "";
         $answer = prompt('Your answer', $answer);
-        $result = Gmp($num1, $num2);
+        $result = gmp($num1, $num2);
         if ($result == $answer) {
-            Correct();
+            correct();
         } else {
             line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
             line("'Let's try again, %s!'", $name);
             exit();
         }
     }
-    Win($name);
+    win($name);
     return true;
 }
 
-function Prime(string $name)
+function prime(string $name)
 {
     for ($i = 0; $i < 3; $i++) {
-        $question = AbsRandom();
+        $question = absRandom();
         $answer = "";
         $result = "yes";
         line('Question: ' . $question);
@@ -152,23 +152,23 @@ function Prime(string $name)
         }
 
         if ($result === $answer) {
-            Correct();
+            correct();
         } else {
-            Loss($name, $answer, $result);
+            loss($name, $answer, $result);
         }
     }
-    Win($name);
+    win($name);
 }
 
-function Progression(string $name)
+function progression(string $name)
 {
     for ($i = 0; $i < 3; $i++) {
         $array = [];
         $allNums = 0;
         $length = rand(5, 10);
         $rand = rand(0, $length);
-        $num1 = AbsRandom();
-        $num2 = AbsRandom();
+        $num1 = absRandom();
+        $num2 = absRandom();
         $progression = ($num2 - $num1);
         for ($l = 0; $l <= $length; $l++) {
             $sum = $num1 + $progression;
@@ -183,10 +183,10 @@ function Progression(string $name)
         $answer = "";
         $answer = prompt('Your answer', $answer);
         if ($result == $answer) {
-            Correct();
+            correct();
         } else {
-            Loss($name, $answer, $result);
+            loss($name, $answer, $result);
         }
     }
-    Win($name);
+    win($name);
 }
