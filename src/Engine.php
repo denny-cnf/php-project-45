@@ -55,8 +55,7 @@ function gmp(int $d1, int $d2)
             $array2[] = $i2;
         }
     }
-    $od = array_intersect($array1, $array2);
-    $result = max($od);
+    $result = max(array_intersect($array1, $array2));
     return $result;
 }
 
