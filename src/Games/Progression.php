@@ -16,5 +16,5 @@ function StartGame()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line("What number is missing in the progression?");
-    return Progression($name);
+    Progression($name);
 }

@@ -16,5 +16,5 @@ function StartGame()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
-    return Prime($name);
+    Prime($name);
 }
