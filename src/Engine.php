@@ -82,7 +82,7 @@ function even(string $name)
 
 function calc(string $name)
 {
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $num1 = absRandom();
         $num2 = absRandom();
         if ($num1 < $num2) {
@@ -118,7 +118,7 @@ function calc(string $name)
 
 function gcd(string $name)
 {
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $num1 = absRandom();
         $num2 = absRandom();
         line("Question: $num1 $num2");
@@ -128,18 +128,15 @@ function gcd(string $name)
         if ($result == $answer) {
             correct();
         } else {
-            line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-            line("'Let's try again, %s!'", $name);
-            exit();
+            loss($name, $answer, $result);loss($name, $answer, $result);
         }
     }
     win($name);
-    return true;
 }
 
 function prime(string $name)
 {
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $question = absRandom();
         $answer = "";
         $result = "yes";
@@ -162,7 +159,7 @@ function prime(string $name)
 
 function progression(string $name)
 {
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 0; $i < ROUNDS; $i++) {
         $array = [];
         $allNums = 0;
         $length = rand(5, 10);
