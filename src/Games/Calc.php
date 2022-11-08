@@ -53,4 +53,3 @@ function calc()
     }
     win($name);
 }
-
