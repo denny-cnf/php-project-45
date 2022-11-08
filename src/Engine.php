@@ -34,7 +34,7 @@ function win(string $name)
     line("Congratulations, %s!", $name);
 }
 
-function checkData($name, $question, $result, $answer)
+function checkData(string $name, mixed $question, mixed $result, mixed $answer)
 {
     if ($result == $answer) {
         correct();
