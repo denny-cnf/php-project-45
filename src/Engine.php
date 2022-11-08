@@ -69,43 +69,6 @@ function gmp(int $d1, int $d2)
     return $result;
 }
 
-function calc(string $name)
-{
-    for ($i = 0; $i < ROUNDS; $i++) {
-        $num1 = absRandom();
-        $num2 = absRandom();
-        if ($num1 < $num2) {
-            $tempNum1 = $num1;
-            $tempNum2 = $num2;
-            $num1 = $tempNum2;
-            $num2 = $tempNum1;
-        }
-        $symbol = array('+', '-', '*');
-        $randomSymbol = $symbol[array_rand($symbol)];
-        line("Question: $num1 $randomSymbol $num2");
-        $answer = "";
-        $answer = prompt('Your answer', $answer);
-        switch ($randomSymbol) {
-            case '+':
-                $result = $num1 + $num2;
-                break;
-            case '-':
-                $result = $num1 - $num2;
-                break;
-            case '*':
-                $result = $num1 * $num2;
-                break;
-        }
-        if ($result == $answer) {
-            correct();
-        } else {
-            loss($name, $answer, $result);
-            break;
-        }
-    }
-    win($name);
-}
-
 function gcd(string $name)
 {
     for ($i = 0; $i < ROUNDS; $i++) {
