@@ -10,7 +10,7 @@ const ROUNDS = 3;
 use function cli\line;
 use function cli\prompt;
 
-function hello()
+function hello($name)
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
@@ -22,7 +22,6 @@ function loss(string $name, string $answer, mixed $result)
 {
     line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
-    return exit();
 }
 
 function correct()
@@ -33,6 +32,17 @@ function correct()
 function win(string $name)
 {
     line("Congratulations, %s!", $name);
+}
+
+function checkData($name, $question, $result, $answer)
+{
+    if ($result == $answer) {
+        correct();
+    } else {
+        loss($name, $answer, $result);
+        exit();
+    }
+    //return win($name);
 }
 
 function absRandom()
@@ -57,27 +67,6 @@ function gmp(int $d1, int $d2)
     }
     $result = max(array_intersect($array1, $array2));
     return $result;
-}
-
-function even(string $name)
-{
-    for ($i = 0; $i < ROUNDS; $i++) {
-        $question = absRandom();
-        $answer = "";
-        line('Question: ' . $question);
-        $answer = prompt('Your answer', $answer);
-        if ($question % 2 === 0) {
-            $result = "yes";
-        } else {
-            $result = "no";
-        }
-        if ($result === $answer) {
-            correct();
-        } else {
-            loss($name, $answer, $result);
-        }
-    }
-    win($name);
 }
 
 function calc(string $name)
@@ -111,6 +100,7 @@ function calc(string $name)
             correct();
         } else {
             loss($name, $answer, $result);
+            break;
         }
     }
     win($name);
@@ -129,6 +119,7 @@ function gcd(string $name)
             correct();
         } else {
             loss($name, $answer, $result);
+            break;
         }
     }
     win($name);
@@ -152,6 +143,7 @@ function prime(string $name)
             correct();
         } else {
             loss($name, $answer, $result);
+            break;
         }
     }
     win($name);
@@ -183,6 +175,7 @@ function progression(string $name)
             correct();
         } else {
             loss($name, $answer, $result);
+            break;
         }
     }
     win($name);
