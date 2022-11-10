@@ -34,7 +34,7 @@ function win(string $name)
     line("Congratulations, %s!", $name);
 }
 
-function checkData(string $name, mixed $question, mixed $result, mixed $answer)
+function checkData(string $name, mixed $result, mixed $answer)
 {
     if ($result == $answer) {
         correct();
@@ -42,7 +42,22 @@ function checkData(string $name, mixed $question, mixed $result, mixed $answer)
         loss($name, $answer, $result);
         exit();
     }
-    //return win($name);
+}
+
+function getrandomSymbol(string $symbol, int $a, int $b)
+{
+    switch ($symbol) {
+        case '+':
+            $result = $a + $b;
+            break;
+        case '-':
+            $result = $a - $b;
+            break;
+        case '*':
+            $result = $a * $b;
+            break;
+    }
+    return $result;
 }
 
 function absRandom()
