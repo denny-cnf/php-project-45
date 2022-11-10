@@ -80,7 +80,7 @@ function gmp(int $d1, int $d2)
             $array2[] = $i2;
         }
     }
-    return max(array_intersect($array1, $array2));;
+    return max(array_intersect($array1, $array2));
 }
 
 function prime(string $name)
