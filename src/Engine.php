@@ -106,35 +106,3 @@ function prime(string $name)
     }
     win($name);
 }
-
-function progression(string $name)
-{
-    for ($i = 0; $i < ROUNDS; $i++) {
-        $array = [];
-        $allNums = 0;
-        $length = rand(5, 10);
-        $rand = rand(0, $length);
-        $num1 = absRandom();
-        $num2 = absRandom();
-        $progression = ($num2 - $num1);
-        for ($l = 0; $l <= $length; $l++) {
-            $sum = $num1 + $progression;
-            $allNums += $sum;
-            $array[] = $allNums;
-        }
-        $result = $array[$rand];
-        $replacement = array($rand => "..");
-        $array = array_replace($array, $replacement);
-        $question = implode(" ", $array);
-        line("Question: $question");
-        $answer = "";
-        $answer = prompt('Your answer', $answer);
-        if ($result == $answer) {
-            correct();
-        } else {
-            loss($name, $answer, $result);
-            break;
-        }
-    }
-    win($name);
-}
