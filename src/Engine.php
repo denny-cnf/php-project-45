@@ -46,6 +46,7 @@ function checkData(string $name, mixed $answer, mixed $result)
 
 function getrandomSymbol(string $symbol, int $a, int $b)
 {
+    $result = "";
     switch ($symbol) {
         case '+':
             $result = $a + $b;
@@ -67,7 +68,6 @@ function absRandom()
 
 function gmp(int $d1, int $d2)
 {
-    $result = "";
     $array1 = [];
     $array2 = [];
     for ($i1 = $d1; $i1 >= 1; $i1--) {
@@ -80,8 +80,7 @@ function gmp(int $d1, int $d2)
             $array2[] = $i2;
         }
     }
-    $result = max(array_intersect($array1, $array2));
-    return $result;
+    return max(array_intersect($array1, $array2));;
 }
 
 function prime(string $name)
