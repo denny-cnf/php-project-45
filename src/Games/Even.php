@@ -11,6 +11,7 @@ use function cli\prompt;
 use function Games\Engine\absRandom;
 use function Games\Engine\win;
 use function Games\Engine\checkData;
+
 use const Games\Engine\ROUNDS;
 
 function even()
@@ -22,7 +23,7 @@ function even()
     for ($i = 0; $i < ROUNDS; $i++) {
         $question = absRandom();
         line('Question: ' . $question);
-        $answer = prompt('Your answer', $answer="");
+        $answer = prompt('Your answer', $answer = "");
         if ($question % 2 === 0) {
             $result = "yes";
         } else {

@@ -12,6 +12,7 @@ use function Games\Engine\absRandom;
 use function Games\Engine\checkData;
 use function Games\Engine\win;
 use function Games\Engine\getrandomSymbol;
+
 use const Games\Engine\ROUNDS;
 
 function calc()
@@ -30,7 +31,7 @@ function calc()
         } 
         $result = getrandomSymbol($symbol, $leftNumber, $rightNumber);
         line("Question: $leftNumber $symbol $rightNumber");
-        $answer = prompt('Your answer', $answer="");
+        $answer = prompt('Your answer', $answer = "");
         checkData($name, $result, $answer);
     }
     win($name);
