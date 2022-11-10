@@ -82,27 +82,3 @@ function gmp(int $d1, int $d2)
     }
     return max(array_intersect($array1, $array2));
 }
-
-function prime(string $name)
-{
-    for ($i = 0; $i < ROUNDS; $i++) {
-        $question = absRandom();
-        $answer = "";
-        $result = "yes";
-        line('Question: ' . $question);
-        $answer = prompt('Your answer', $answer);
-        for ($k = 2; $k < $question; $k++) {
-            if ($question % $k === 0) {
-                $result = "no";
-            }
-        }
-
-        if ($result === $answer) {
-            correct();
-        } else {
-            loss($name, $answer, $result);
-            break;
-        }
-    }
-    win($name);
-}

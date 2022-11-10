@@ -6,15 +6,31 @@
 
 namespace Games\Prime;
 
-use function Games\Engine\prime;
 use function cli\line;
 use function cli\prompt;
+use function Games\Engine\absRandom;
+use function Games\Engine\checkData;
+use function Games\Engine\win;
 
-function startGame()
+use const Games\Engine\ROUNDS;
+
+function getPrime()
 {
     line('Welcome to the Brain Games!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
-    prime($name);
+    for ($i = 0; $i < ROUNDS; $i++) {
+        $question = absRandom();
+        $result = "yes";
+        line('Question: ' . $question);
+        $answer = prompt('Your answer', $answer = "");
+        for ($k = 2; $k < $question; $k++) {
+            if ($question % $k === 0) {
+                $result = "no";
+            }
+        }
+        checkData($name, $answer, $result);
+    }
+    win($name);
 }
