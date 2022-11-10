@@ -28,11 +28,11 @@ function calc()
         $symbol = $symbols[array_rand($symbols)];
         if ($leftNumber < $rightNumber) {
             [$leftNumber, $rightNumber] = [$rightNumber, $leftNumber];
-        } 
+        }
         $result = getrandomSymbol($symbol, $leftNumber, $rightNumber);
         line("Question: $leftNumber $symbol $rightNumber");
         $answer = prompt('Your answer', $answer = "");
-        checkData($name, $result, $answer);
+        checkData($name, $answer, $result);
     }
     win($name);
 }

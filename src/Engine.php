@@ -34,7 +34,7 @@ function win(string $name)
     line("Congratulations, %s!", $name);
 }
 
-function checkData(string $name, mixed $result, mixed $answer)
+function checkData(string $name, mixed $answer, mixed $result)
 {
     if ($result == $answer) {
         correct();
@@ -82,25 +82,6 @@ function gmp(int $d1, int $d2)
     }
     $result = max(array_intersect($array1, $array2));
     return $result;
-}
-
-function gcd(string $name)
-{
-    for ($i = 0; $i < ROUNDS; $i++) {
-        $num1 = absRandom();
-        $num2 = absRandom();
-        line("Question: $num1 $num2");
-        $answer = "";
-        $answer = prompt('Your answer', $answer);
-        $result = gmp($num1, $num2);
-        if ($result == $answer) {
-            correct();
-        } else {
-            loss($name, $answer, $result);
-            break;
-        }
-    }
-    win($name);
 }
 
 function prime(string $name)
