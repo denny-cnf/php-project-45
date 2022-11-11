@@ -10,6 +10,8 @@ All games are 3 rounds. If the user successfully answered all 3, then he won. If
 
 ## Requirements
 * PHP 8.0+
+* Composer
+* Make
 
 #### Library
 1. [php-cli-tools](https://github.com/wp-cli/php-cli-tools)
