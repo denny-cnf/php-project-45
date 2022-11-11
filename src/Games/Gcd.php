@@ -12,14 +12,13 @@ use function Games\Engine\absRandom;
 use function Games\Engine\win;
 use function Games\Engine\checkData;
 use function Games\Engine\gmp;
+use function Games\Engine\hello;
 
 use const Games\Engine\ROUNDS;
 
 function getGcd()
 {
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $name = hello();
     line("Find the greatest common divisor of given numbers.");
     for ($i = 0; $i < ROUNDS; $i++) {
         $num1 = absRandom();

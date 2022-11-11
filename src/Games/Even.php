@@ -11,14 +11,13 @@ use function cli\prompt;
 use function Games\Engine\absRandom;
 use function Games\Engine\win;
 use function Games\Engine\checkData;
+use function Games\Engine\hello;
 
 use const Games\Engine\ROUNDS;
 
 function even()
 {
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $name = hello();
     line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($i = 0; $i < ROUNDS; $i++) {
         $question = absRandom();

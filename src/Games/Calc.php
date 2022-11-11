@@ -8,6 +8,7 @@ namespace Games\Calc;
 
 use function cli\line;
 use function cli\prompt;
+use function Games\Engine\hello;
 use function Games\Engine\absRandom;
 use function Games\Engine\checkData;
 use function Games\Engine\win;
@@ -17,9 +18,7 @@ use const Games\Engine\ROUNDS;
 
 function calc()
 {
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $name = hello();
     line("What is the result of the expression?");
     for ($i = 0; $i < ROUNDS; $i++) {
         $leftNumber = absRandom();

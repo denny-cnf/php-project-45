@@ -10,15 +10,14 @@ use function cli\line;
 use function cli\prompt;
 use function Games\Engine\absRandom;
 use function Games\Engine\checkData;
+use function Games\Engine\hello;
 use function Games\Engine\win;
 
 use const Games\Engine\ROUNDS;
 
 function getPrime()
 {
-    line('Welcome to the Brain Games!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $name = hello();
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
     for ($i = 0; $i < ROUNDS; $i++) {
         $question = absRandom();
