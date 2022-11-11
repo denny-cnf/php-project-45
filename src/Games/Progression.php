@@ -8,7 +8,7 @@ namespace Games\Progression;
 
 use function cli\line;
 use function cli\prompt;
-use function Games\Engine\absRandom;
+use function Games\Engine\absoluteRandomNum;
 use function Games\Engine\checkData;
 use function Games\Engine\hello;
 use function Games\Engine\win;
@@ -24,8 +24,8 @@ function getProgression()
         $allNums = 0;
         $length = rand(5, 10);
         $rand = rand(0, $length);
-        $num1 = absRandom();
-        $num2 = absRandom();
+        $num1 = absoluteRandomNum();
+        $num2 = absoluteRandomNum();
         $progression = ($num2 - $num1);
         for ($l = 0; $l <= $length; $l++) {
             $sum = $num1 + $progression;

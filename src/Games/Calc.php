@@ -9,27 +9,27 @@ namespace Games\Calc;
 use function cli\line;
 use function cli\prompt;
 use function Games\Engine\hello;
-use function Games\Engine\absRandom;
+use function Games\Engine\absoluteRandomNum;
 use function Games\Engine\checkData;
 use function Games\Engine\win;
-use function Games\Engine\getrandomSymbol;
+use function Games\Engine\getRandomSymbol;
 
 use const Games\Engine\ROUNDS;
 
-function calc()
+function getCalc()
 {
     $name = hello();
     line("What is the result of the expression?");
     for ($i = 0; $i < ROUNDS; $i++) {
-        $leftNumber = absRandom();
-        $rightNumber = absRandom();
+        $num1 = absoluteRandomNum();
+        $num2 = absoluteRandomNum();
         $symbols = array('+', '-', '*');
         $symbol = $symbols[array_rand($symbols)];
-        if ($leftNumber < $rightNumber) {
-            [$leftNumber, $rightNumber] = [$rightNumber, $leftNumber];
+        if ($num1 < $num2) {
+            [$num1, $num2] = [$num2, $num1];
         }
-        $result = getrandomSymbol($symbol, $leftNumber, $rightNumber);
-        line("Question: $leftNumber $symbol $rightNumber");
+        $result = getRandomSymbol($symbol, $num1, $num2);
+        line("Question: $num1 $symbol $num2");
         $answer = prompt('Your answer', $answer = "");
         checkData($name, $answer, $result);
     }

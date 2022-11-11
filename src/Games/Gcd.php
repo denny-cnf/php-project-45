@@ -8,7 +8,7 @@ namespace Games\Gcd;
 
 use function cli\line;
 use function cli\prompt;
-use function Games\Engine\absRandom;
+use function Games\Engine\absoluteRandomNum;
 use function Games\Engine\win;
 use function Games\Engine\checkData;
 use function Games\Engine\gmp;
@@ -21,8 +21,8 @@ function getGcd()
     $name = hello();
     line("Find the greatest common divisor of given numbers.");
     for ($i = 0; $i < ROUNDS; $i++) {
-        $num1 = absRandom();
-        $num2 = absRandom();
+        $num1 = absoluteRandomNum();
+        $num2 = absoluteRandomNum();
         line("Question: $num1 $num2");
         $answer = prompt('Your answer', $answer = "");
         $result = gmp($num1, $num2);

@@ -44,24 +44,24 @@ function checkData(string $name, mixed $answer, mixed $result)
     }
 }
 
-function getrandomSymbol(string $symbol, int $a, int $b)
+function getRandomSymbol(string $symbol, int $num1, int $num2)
 {
     $result = "";
     switch ($symbol) {
         case '+':
-            $result = $a + $b;
+            $result = $num1 + $num2;
             break;
         case '-':
-            $result = $a - $b;
+            $result = $num1 - $num2;
             break;
         case '*':
-            $result = $a * $b;
+            $result = $num1 * $num2;
             break;
     }
     return $result;
 }
 
-function absRandom()
+function absoluteRandomNum()
 {
     return abs(rand(1, 99));
 }

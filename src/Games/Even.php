@@ -8,7 +8,7 @@ namespace Games\Even;
 
 use function cli\line;
 use function cli\prompt;
-use function Games\Engine\absRandom;
+use function Games\Engine\absoluteRandomNum;
 use function Games\Engine\win;
 use function Games\Engine\checkData;
 use function Games\Engine\hello;
@@ -20,7 +20,7 @@ function even()
     $name = hello();
     line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($i = 0; $i < ROUNDS; $i++) {
-        $question = absRandom();
+        $question = absoluteRandomNum();
         line('Question: ' . $question);
         $answer = prompt('Your answer', $answer = "");
         if ($question % 2 === 0) {
