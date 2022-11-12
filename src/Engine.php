@@ -48,8 +48,9 @@ function checkData(string $name, mixed $answer, mixed $result)
     return;
 }
 
-function getProgressionNums($num1, $num2, $allNums, $arrayLength)
+function getProgressionNums(int $num1, int $num2, mixed $allNums, int $arrayLength)
 {
+    $array = [];
     $progression = ($num2 - $num1);
     for ($l = 0; $l <= $arrayLength; $l++) {
         $allNums += $num1 + $progression;
