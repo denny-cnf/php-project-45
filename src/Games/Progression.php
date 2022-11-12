@@ -10,6 +10,7 @@ use function cli\line;
 use function cli\prompt;
 use function Games\Engine\absoluteRandomNum;
 use function Games\Engine\checkData;
+use function Games\Engine\getProgressionNums;
 use function Games\Engine\hello;
 use function Games\Engine\win;
 
@@ -21,21 +22,15 @@ function getProgression()
     line("What number is missing in the progression?");
     for ($i = 0; $i < ROUNDS; $i++) {
         $array = [];
-        $allNums = 0;
-        $length = rand(5, 10);
-        $rand = rand(0, $length);
+        $allNums = null;
+        $arrayLength = rand(5, 10);
+        $getRandomNum = rand(0, $arrayLength);
         $num1 = absoluteRandomNum();
         $num2 = absoluteRandomNum();
-        $progression = ($num2 - $num1);
-        for ($l = 0; $l <= $length; $l++) {
-            $sum = $num1 + $progression;
-            $allNums += $sum;
-            $array[] = $allNums;
-        }
-        $result = $array[$rand];
-        $replacement = array($rand => "..");
-        $array = array_replace($array, $replacement);
-        $question = implode(" ", $array);
+        $array = getProgressionNums($num1, $num2, $allNums, $arrayLength);
+        $result = $array[$getRandomNum];
+        $replacement = array($getRandomNum => "..");
+        $question = implode(" ", array_replace($array, $replacement));
         line("Question: $question");
         $getUserAnswer = prompt('Your answer', $getUserAnswer = "");
         checkData($name, $getUserAnswer, $result);
