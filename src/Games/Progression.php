@@ -21,7 +21,6 @@ function getProgression()
     $name = hello();
     line("What number is missing in the progression?");
     for ($i = 0; $i < ROUNDS; $i++) {
-        $array = [];
         $allNums = null;
         $arrayLength = rand(5, 10);
         $getRandomNum = rand(0, $arrayLength);
@@ -29,8 +28,7 @@ function getProgression()
         $num2 = absoluteRandomNum();
         $array = getProgressionNums($num1, $num2, $allNums, $arrayLength);
         $result = $array[$getRandomNum];
-        $replacement = array($getRandomNum => "..");
-        $question = implode(" ", array_replace($array, $replacement));
+        $question = implode(" ", array_replace($array, array($getRandomNum => "..")));
         line("Question: $question");
         $getUserAnswer = prompt('Your answer', $getUserAnswer = "");
         checkData($name, $getUserAnswer, $result);
