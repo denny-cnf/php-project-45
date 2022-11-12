@@ -23,13 +23,13 @@ function getPrime()
         $question = absoluteRandomNum();
         $result = "yes";
         line('Question: ' . $question);
-        $answer = prompt('Your answer', $answer = "");
+        $getUserAnswer = prompt('Your answer', $getUserAnswer = "");
         for ($k = 2; $k < $question; $k++) {
             if ($question % $k === 0) {
                 $result = "no";
             }
         }
-        checkData($name, $answer, $result);
+        checkData($name, $getUserAnswer, $result);
     }
     win($name);
 }

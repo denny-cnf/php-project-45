@@ -22,16 +22,19 @@ function loss(string $name, string $answer, mixed $result)
 {
     line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
     line("'Let's try again, %s!'", $name);
+    return;
 }
 
 function correct()
 {
     line("Correct!");
+    return;
 }
 
 function win(string $name)
 {
     line("Congratulations, %s!", $name);
+    return;
 }
 
 function checkData(string $name, mixed $answer, mixed $result)
@@ -42,6 +45,7 @@ function checkData(string $name, mixed $answer, mixed $result)
         loss($name, $answer, $result);
         exit();
     }
+    return;
 }
 
 function getRandomSymbol(string $symbol, int $num1, int $num2)

@@ -24,14 +24,14 @@ function getCalc()
         $num1 = absoluteRandomNum();
         $num2 = absoluteRandomNum();
         $symbols = array('+', '-', '*');
-        $symbol = $symbols[array_rand($symbols)];
+        $setRandomSymbol = $symbols[array_rand($symbols)];
         if ($num1 < $num2) {
             [$num1, $num2] = [$num2, $num1];
         }
-        $result = getRandomSymbol($symbol, $num1, $num2);
-        line("Question: $num1 $symbol $num2");
-        $answer = prompt('Your answer', $answer = "");
-        checkData($name, $answer, $result);
+        $result = getRandomSymbol($setRandomSymbol, $num1, $num2);
+        line("Question: $num1 $setRandomSymbol $num2");
+        $getUserAnswer = prompt('Your answer', $getUserAnswer = "");
+        checkData($name, $getUserAnswer, $result);
     }
     win($name);
 }
