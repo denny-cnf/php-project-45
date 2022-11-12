@@ -24,9 +24,9 @@ function getGcd()
         $num1 = absoluteRandomNum();
         $num2 = absoluteRandomNum();
         line("Question: $num1 $num2");
-        $answer = prompt('Your answer', $answer = "");
-        $result = gmp($num1, $num2);
-        checkData($name, $answer, $result);
+        $getUserAnswer = prompt('Your answer', $getUserAnswer = "");
+        $getResult = gmp($num1, $num2);
+        checkData($name, $getUserAnswer, $getResult);
     }
     win($name);
 }

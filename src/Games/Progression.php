@@ -37,8 +37,8 @@ function getProgression()
         $array = array_replace($array, $replacement);
         $question = implode(" ", $array);
         line("Question: $question");
-        $answer = prompt('Your answer', $answer = "");
-        checkData($name, $answer, $result);
+        $getUserAnswer = prompt('Your answer', $getUserAnswer = "");
+        checkData($name, $getUserAnswer, $result);
     }
     win($name);
 }

@@ -22,13 +22,13 @@ function even()
     for ($i = 0; $i < ROUNDS; $i++) {
         $question = absoluteRandomNum();
         line('Question: ' . $question);
-        $answer = prompt('Your answer', $answer = "");
+        $getUserAnswer = prompt('Your answer', $getUserAnswer = "");
         if ($question % 2 === 0) {
             $result = "yes";
         } else {
             $result = "no";
         }
-        checkData($name, $answer, $result);
+        checkData($name, $getUserAnswer, $result);
     }
     win($name);
 }
