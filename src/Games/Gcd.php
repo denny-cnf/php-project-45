@@ -15,8 +15,6 @@ use function Games\Engine\hello;
 
 use const Games\Engine\ROUNDS;
 
-
-
 function getGcd()
 {
     function gmp(int $d1, int $d2)
