@@ -18,19 +18,6 @@ function hello()
     return $name;
 }
 
-function loss(string $name, string $answer, mixed $result)
-{
-    line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
-    line("'Let's try again, %s!'", $name);
-    return;
-}
-
-function correct()
-{
-    line("Correct!");
-    return;
-}
-
 function win(string $name)
 {
     line("Congratulations, %s!", $name);
@@ -40,9 +27,11 @@ function win(string $name)
 function checkData(string $name, mixed $answer, mixed $result)
 {
     if ($result == $answer) {
-        correct();
+        line("Correct!");
+        return;
     } else {
-        loss($name, $answer, $result);
+        line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
+        line("'Let's try again, %s!'", $name);
         exit();
     }
     return;
