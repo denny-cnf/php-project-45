@@ -28,7 +28,6 @@ function checkData(string $name, mixed $answer, mixed $result)
 {
     if ($result == $answer) {
         line("Correct!");
-        return;
     } else {
         line("'$answer' is wrong answer ;(. Correct answer was '$result'.");
         line("'Let's try again, %s!'", $name);
