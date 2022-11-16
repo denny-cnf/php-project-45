@@ -12,27 +12,12 @@ use function Games\Engine\hello;
 use function Games\Engine\absoluteRandomNum;
 use function Games\Engine\checkData;
 use function Games\Engine\win;
+use function Games\Engine\getRandomSymbol;
 
 use const Games\Engine\ROUNDS;
 
 function getCalc()
 {
-    function getRandomSymbol(string $symbol, int $num1, int $num2)
-    {
-        $result = "";
-        switch ($symbol) {
-            case '+':
-                $result = $num1 + $num2;
-                break;
-            case '-':
-                $result = $num1 - $num2;
-                break;
-            case '*':
-                $result = $num1 * $num2;
-                break;
-        }
-        return $result;
-    }
     $name = hello();
     line("What is the result of the expression?");
     for ($i = 0; $i < ROUNDS; $i++) {
