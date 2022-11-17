@@ -33,38 +33,9 @@ function checkData(string $name, mixed $answer, mixed $result)
         line("'Let's try again, %s!'", $name);
         exit();
     }
-    return;
-}
-
-function getProgressionNums(int $num1, int $num2, mixed $allNums, int $arrayLength)
-{
-    $array = [];
-    $progression = ($num2 - $num1);
-    for ($l = 0; $l <= $arrayLength; $l++) {
-        $allNums += $num1 + $progression;
-        $array[] = $allNums;
-    }
-    return $array;
 }
 
 function absoluteRandomNum()
 {
     return abs(rand(1, 99));
-}
-
-function gmp(int $d1, int $d2)
-{
-    $array1 = [];
-    $array2 = [];
-    for ($i1 = $d1; $i1 >= 1; $i1--) {
-        if (($d1 % $i1) == 0) {
-            $array1[] = $i1;
-        }
-    }
-    for ($i2 = $d2; $i2 >= 1; $i2--) {
-        if (($d2 % $i2) == 0) {
-            $array2[] = $i2;
-        }
-    }
-    return max(array_intersect($array1, $array2));
 }

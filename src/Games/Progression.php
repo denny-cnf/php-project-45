@@ -10,7 +10,6 @@ use function cli\line;
 use function cli\prompt;
 use function Games\Engine\absoluteRandomNum;
 use function Games\Engine\checkData;
-use function Games\Engine\getProgressionNums;
 use function Games\Engine\hello;
 use function Games\Engine\win;
 
@@ -26,7 +25,12 @@ function getProgression()
         $getRandomNum = rand(0, $arrayLength);
         $num1 = absoluteRandomNum();
         $num2 = absoluteRandomNum();
-        $array = getProgressionNums($num1, $num2, $allNums, $arrayLength);
+        $array = [];
+        $progression = ($num2 - $num1);
+        for ($l = 0; $l <= $arrayLength; $l++) {
+            $allNums += $num1 + $progression;
+            $array[] = $allNums;
+        }
         $result = $array[$getRandomNum];
         $question = implode(" ", array_replace($array, array($getRandomNum => "..")));
         line("Question: $question");
