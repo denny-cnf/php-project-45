@@ -47,23 +47,6 @@ function getProgressionNums(int $num1, int $num2, mixed $allNums, int $arrayLeng
     return $array;
 }
 
-function getRandomSymbol(string $symbol, int $num1, int $num2)
-{
-    $result = "";
-    switch ($symbol) {
-        case '+':
-            $result = $num1 + $num2;
-            break;
-        case '-':
-            $result = $num1 - $num2;
-            break;
-        case '*':
-            $result = $num1 * $num2;
-            break;
-    }
-    return $result;
-}
-
 function absoluteRandomNum()
 {
     return abs(rand(1, 99));
